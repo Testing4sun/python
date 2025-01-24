@@ -8,7 +8,7 @@ def square(a):
     return s
 
 
-a = int(input("Введите длину стороны: "))
+a = float(input("Введите длину стороны: "))
 result = square(a)
 final_result = ceil(result)
 print("Площадь квадрата с округлением: ", final_result)
