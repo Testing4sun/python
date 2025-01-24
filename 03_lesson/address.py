@@ -5,7 +5,7 @@ class Address:
     building = '1'
     apartment = '11'
 
-    def __init__ (self, index, city, street, building, apartment):
+    def __init__(self, index, city, street, building, apartment):
         self.index = index
         self.city = city
         self.street = street
@@ -14,5 +14,4 @@ class Address:
 
     def __str__(self):
         return (f'{self.index}, {self.city}, {self.street}, '
-            f'{self.building} - {self.apartment}')
-
+                f'{self.building} - {self.apartment}')

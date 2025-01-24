@@ -3,7 +3,7 @@ class User:
     firstName = 'Alex'
     lastName = 'G'
 
-    def __init__ (self, first_name, last_name):
+    def __init__(self, first_name, last_name):
         self.firstName = first_name
         self.lastName = last_name
 
