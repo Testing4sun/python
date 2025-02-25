@@ -1,20 +1,3 @@
-# Откройте страницу:
-    # https://bonigarcia.dev/selenium-webdriver-java/data-types.html
-# Заполните форму значениями
-    # First name Иван
-    # Last name Петров
-    # Address Ленина, 55-3
-    # Email test@skypro.com
-    # Phone number +7985899998787
-    # Zip code *оставить пустым
-    # City Москва
-    # Country Россия
-    # Job position QA
-    # Company SkyPro
-# Нажмите кнопку Submit
-# Проверьте (assert), что поле Zip code подсвечено красным
-# Проверьте (assert), что остальные поля подсвечены зеленым
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -25,42 +8,31 @@ driver.get(
            )
 
 
-first_name_input = driver.find_element(By.CSS_SELECTOR,
-                                       'input[name="first-name"]'
-                                       ).send_keys('Иван')
-last_name_input = driver.find_element(By.CSS_SELECTOR,
-                                      'input[name="last-name"]'
-                                      ).send_keys('Петров')
-address_input = driver.find_element(By.CSS_SELECTOR,
-                                    'input[name="address"]'
-                                    ).send_keys('Ленина, 55-3')
-email_input = driver.find_element(By.CSS_SELECTOR,
-                                  'input[name="e-mail"]'
-                                  ).send_keys('test@skypro.com')
-phone_input = driver.find_element(By.CSS_SELECTOR,
-                                  'input[name="phone"]'
-                                  ).send_keys('+7985899998787')
-zip_code_input = driver.find_element(By.CSS_SELECTOR,
-                                     'input[name="zip-code"]'
-                                     ).send_keys('')
-city_input = driver.find_element(By.CSS_SELECTOR,
-                                 'input[name="city"]'
-                                 ).send_keys('Москва')
-country_input = driver.find_element(By.CSS_SELECTOR,
-                                    'input[name="country"]'
-                                    ).send_keys('Россия')
-job_position_input = driver.find_element(By.CSS_SELECTOR,
-                                         'input[name="job-position"]'
-                                         ).send_keys('QA')
-company_input = driver.find_element(By.CSS_SELECTOR,
-                                    'input[name="company"]'
-                                    ).send_keys('SkyPro')
-
-button = driver.find_element(By.CSS_SELECTOR,
-                             'button.btn.btn-outline-primary.mt-3').click()
-
-
 def test_form():
+    driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]'
+                        ).send_keys('Иван')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="last-name"]'
+                        ).send_keys('Петров')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="address"]'
+                        ).send_keys('Ленина, 55-3')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="e-mail"]'
+                        ).send_keys('test@skypro.com')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="phone"]'
+                        ).send_keys('+7985899998787')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="zip-code"]'
+                        ).send_keys('')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="city"]'
+                        ).send_keys('Москва')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="country"]'
+                        ).send_keys('Россия')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="job-position"]'
+                        ).send_keys('QA')
+    driver.find_element(By.CSS_SELECTOR, 'input[name="company"]'
+                        ).send_keys('SkyPro')
+
+    driver.find_element(By.CSS_SELECTOR,
+                        'button.btn.btn-outline-primary.mt-3').click()
+
     assert "alert-danger" in driver.find_element(By.ID, "zip-code"
                                                  ).get_attribute("class")
     assert "alert-success" in driver.find_element(By.ID,
